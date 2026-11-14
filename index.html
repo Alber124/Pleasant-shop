@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLEASANT FAST DELIVERY SHOP - Data, Airtime, Shop, Research & Agent Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#FFC107;--gold2:#FF9800;--dark:#0B1026;--blue:#2563EB;--blue2:#00C6FF;--green:#00C853;--green2:#00E676;--light:#F6F7FB;--red:#FF3B30;--orange:#FF6D00;--purple:#7C4DFF;--pink:#FF4081;--card-shadow:0 10px 30px rgba(11,16,38,.08);--radius:20px}
+body{font-family:'Plus Jakarta Sans','Inter',sans-serif;background:var(--light);color:#1A1D29;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none} button{font-family:inherit}
+header{background:rgba(11,16,38,.95);backdrop-filter:blur(12px);color:white;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:12px;border-bottom:2px solid var(--gold);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.logo{font-size:20px;font-weight:900;line-height:1}.logo span{background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo small{font-size:10px;color:#94A3B8;letter-spacing:1.5px;font-weight:600}.logo .dot{width:9px;height:9px;background:var(--green2);border-radius:50%;display:inline-block;box-shadow:0 0 0 4px rgba(0,230,118,.2);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,230,118,.4)}70%{box-shadow:0 0 0 8px rgba(0,230,118,0)}100%{box-shadow:0 0 0 0 rgba(0,230,118,0)}}
+nav{display:flex;gap:6px;flex-wrap:wrap} nav button{background:rgba(255,255,255,.08);color:white;border:1px solid rgba(255,255,255,.12);padding:9px 13px;border-radius:100px;cursor:pointer;font-weight:700;font-size:12.5px;transition:.25s}
+nav button:hover{transform:translateY(-2px);background:rgba(255,255,255,.15)} nav button.active{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#0B1026;border-color:transparent}
+nav button.agent-btn{background:linear-gradient(90deg,#7C4DFF,#FF4081);border:0;box-shadow:0 6px 18px rgba(124,77,255,.4)}
+.wallet{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#0B1026;padding:9px 15px;border-radius:100px;font-weight:800;font-size:13px}
+.userBox{display:flex;gap:8px;align-items:center} .userBox button{padding:8px 14px;border-radius:100px;border:0;cursor:pointer;font-weight:700;font-size:13px}
+#userNameLabel{font-size:13px;font-weight:600;opacity:.9}
+.hero{background:linear-gradient(135deg,#0B1026 0%,#1A237E 35%,#2563EB 70%,#00C6FF 100%);color:white;padding:45px 18px 55px;text-align:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(255,193,7,.35),transparent 70%);top:-180px;right:-100px;border-radius:50%}
+.hero:after{content:"";position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(0,230,118,.25),transparent 70%);bottom:-150px;left:-80px;border-radius:50%}
+.hero>*{position:relative;z-index:1}
+.hero .badge-top{display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:100px;font-size:12px;font-weight:700}
+.hero h1{font-size:36px;line-height:1.05;letter-spacing:-1px;margin:16px 0 10px;font-weight:900}
+.hero h1 span{background:linear-gradient(90deg,#FFC107,#FFEB3B,#00E676);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{margin:0 auto 14px;opacity:.92;max-width:640px;font-size:15px}
+.hero .wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:13px 24px;border-radius:100px;font-weight:800;text-decoration:none;margin:8px 4px;box-shadow:0 10px 25px rgba(37,211,102,.35)}
+.hero .agent-hero-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#7C4DFF,#FF4081);color:white;padding:13px 24px;border-radius:100px;font-weight:800;text-decoration:none;margin:8px 4px;box-shadow:0 10px 25px rgba(124,77,255,.4)}
+.hero-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.hero-stats div{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);padding:10px 16px;border-radius:16px;min-width:110px}
+.hero-stats b{font-size:18px;display:block}.hero-stats span{font-size:11px;opacity:.85}
+.search{max-width:540px;margin:18px auto 0;display:flex;background:white;border-radius:100px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.25);padding:4px}
+.search input{flex:1;padding:13px 16px;border:0;outline:0;font-size:14px} .search button{background:#0B1026;color:white;border:0;padding:0 22px;border-radius:100px;font-weight:800;cursor:pointer}
+.container{max-width:1180px;margin:20px auto;padding:0 16px}
+.section-title{font-size:22px;font-weight:900;display:flex;align-items:center;gap:10px;margin:22px 0 12px}.section-title:after{content:"";flex:1;height:1px;background:#E2E8F0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:white;border-radius:var(--radius);padding:16px;box-shadow:var(--card-shadow);text-align:center;transition:.25s;border:1px solid #EEF0F6;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(11,16,38,.14);border-color:#FFC107}
+.card img{width:100%;height:150px;object-fit:cover;border-radius:14px;background:#E2E8F0}
+.card h3{margin:10px 0 4px;font-size:16px;font-weight:800} .card p{font-size:13px;color:#64748B}
+.price{color:var(--green);font-weight:900;font-size:19px;margin:6px 0}.price s{color:#94A3B8;font-size:13px;font-weight:500;margin-left:6px}
+.old-price{font-size:12px;background:#FEF3C7;color:#92400E;padding:3px 8px;border-radius:100px;font-weight:700}
+.card button{width:100%;margin-top:9px;padding:11px;border:0;border-radius:12px;background:var(--dark);color:white;font-weight:800;cursor:pointer;font-size:14px}
+.card button:hover{background:var(--blue)}
+.card .ribbon{position:absolute;top:12px;left:-6px;background:linear-gradient(90deg,#FF3B30,#FF6D00);color:white;font-size:11px;font-weight:800;padding:5px 12px;border-radius:0 100px 100px 0}
+.cat-row{display:flex;gap:10px;overflow-x:auto;padding:6px 0;scrollbar-width:none}.cat-row::-webkit-scrollbar{display:none}
+.cat{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:6px;background:white;padding:14px 18px;border-radius:18px;box-shadow:var(--card-shadow);cursor:pointer;border:2px solid transparent;min-width:90px}.cat.active{border-color:var(--gold);background:#FFFBEB}.cat span{font-size:26px}.cat b{font-size:12px}
+.tabs{margin:16px 0;display:flex;gap:8px;flex-wrap:wrap}.tabs button{padding:10px 18px;border-radius:100px;border:1px solid #CBD5E1;background:white;cursor:pointer;font-weight:700;font-size:13px}.tabs button.active{background:var(--dark);color:white}
+.form-box{background:white;padding:22px;border-radius:22px;box-shadow:var(--card-shadow);max-width:600px;margin:0 auto;border:1px solid #EEF0F6}
+.form-box h2{margin-bottom:10px;font-size:19px;font-weight:900}
+input,select,textarea{width:100%;padding:13px 14px;margin:7px 0;border:1.5px solid #E2E8F0;border-radius:12px;outline:0;font-size:14px;font-family:inherit;background:#F8FAFC}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);background:white;box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+label{font-size:12px;font-weight:700;color:#475569}
+.btn{width:100%;padding:14px;background:linear-gradient(90deg,#00C853,#00E676);color:white;border:0;border-radius:12px;font-weight:800;cursor:pointer;font-size:15px;margin-top:8px;box-shadow:0 8px 20px rgba(0,200,83,.25)}
+.btn-blue{background:linear-gradient(90deg,#2563EB,#00C6FF)} .btn-gold{background:linear-gradient(90deg,#FFC107,#FF9800);color:#0B1026} .btn-dark{background:var(--dark)} .btn-red{background:linear-gradient(90deg,#FF3B30,#FF6D00)} .btn-orange{background:linear-gradient(90deg,#FF6D00,#FF9800)} .btn-purple{background:linear-gradient(90deg,#7C4DFF,#FF4081);box-shadow:0 8px 20px rgba(124,77,255,.3)}
+.cart{position:fixed;right:16px;bottom:16px;background:var(--dark);color:white;padding:14px 20px;border-radius:100px;cursor:pointer;font-weight:800;z-index:200;box-shadow:0 12px 30px rgba(0,0,0,.3);border:2px solid var(--gold);display:flex;gap:8px;align-items:center}
+.cart span{background:var(--gold);color:#0B1026;padding:2px 8px;border-radius:100px;font-size:12px}
+.modal{position:fixed;inset:0;background:rgba(11,16,38,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:300;padding:14px}
+.modal.show{display:flex}.modal-inner{background:white;width:100%;max-width:600px;border-radius:22px;padding:22px;max-height:92vh;overflow:auto}
+footer{background:var(--dark);color:white;text-align:center;padding:28px 18px;margin-top:40px} footer a{color:#25D366;font-weight:700}
+.badge{display:inline-block;background:#DCFCE7;color:#166534;padding:5px 11px;border-radius:100px;font-size:11px;font-weight:800}
+.badge-yellow{background:#FEF9C3;color:#854D0E}.badge-red{background:#FEE2E2;color:#991B1B}.badge-blue{background:#DBEAFE;color:#1E40AF}.badge-purple{background:#EDE9FE;color:#5B21B6}
+.hidden{display:none} table{width:100%;border-collapse:collapse;margin-top:10px;background:white;border-radius:16px;overflow:hidden;box-shadow:var(--card-shadow)} th,td{padding:11px;border-bottom:1px solid #F1F5F9;text-align:left;font-size:13px} th{background:#F8FAFC;font-weight:800}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}.stat{background:white;padding:16px;border-radius:18px;box-shadow:var(--card-shadow);border-left:4px solid var(--gold)} .stat span{font-size:12px;color:#64748B;font-weight:600} .stat b{font-size:24px;display:block}
+.small{font-size:12px;color:#64748B}
+.tracker{position:relative;margin:20px 0;padding-left:20px;border-left:4px solid #E2E8F0}
+.track-step{position:relative;padding:0 0 18px 15px}.track-step:before{content:"";position:absolute;left:-27px;top:0;width:14px;height:14px;border-radius:50%;background:#CBD5E1;border:3px solid white}
+.track-step.done:before{background:var(--green)} .track-step.active:before{background:var(--gold);box-shadow:0 0 0 5px #FEF9C3}
+.track-step b{display:block} .track-step span{font-size:12px;color:#64748B}
+.notif{padding:12px;border-radius:14px;background:#F0FDF4;border:1px solid #BBF7D0;margin:8px 0;font-size:13px}
+.feature{padding:18px;background:white;border-radius:18px;box-shadow:var(--card-shadow);display:flex;gap:12px;align-items:flex-start;text-align:left}
+.feature span{font-size:28px;background:#FFFBEB;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0}
+.feature b{font-size:14px;display:block}.feature p{font-size:12px;color:#64748B}
+.promo{background:linear-gradient(90deg,#FF3B30,#FF6D00);color:white;padding:12px 16px;border-radius:14px;text-align:center;font-weight:800;font-size:13px;margin:14px 0}
+.agent-banner{background:linear-gradient(135deg,#7C4DFF,#FF4081,#FF9800);color:white;padding:22px;border-radius:22px;text-align:center;margin:18px 0;box-shadow:0 12px 30px rgba(124,77,255,.35)}
+.agent-banner h2{font-size:22px;margin-bottom:6px}.agent-banner p{font-size:14px;opacity:.95}
+.ref-box{background:#F8FAFC;border:2px dashed #7C4DFF;padding:14px;border-radius:14px;word-break:break-all;font-size:13px;font-weight:700;margin:10px 0}
+.copy-btn{background:#0B1026;color:white;border:0;padding:10px 16px;border-radius:100px;font-weight:800;cursor:pointer;margin:4px}
+@media(max-width:640px){.hero h1{font-size:28px} header{flex-direction:column;text-align:center}}
+</style>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="logo"><span class="dot"></span> PLEASANT <span>FAST DELIVERY</span><br><small>SHOP • ACCRA • 0538560561 • OPEN 24/7</small></div>
+  <nav>
+    <button onclick="showPage('home')" id="btn-home" class="active">🏠 Home</button>
+    <button onclick="showPage('data')" id="btn-data">📶 Data</button>
+    <button onclick="showPage('airtime')" id="btn-airtime">📞 Airtime</button>
+    <button onclick="showPage('shop')" id="btn-shop">🛍️ Shop</button>
+    <button onclick="showPage('research')" id="btn-research">📚 Research</button>
+    <button onclick="showPage('track')" id="btn-track">📦 Track</button>
+    <button onclick="showPage('orders')" id="btn-orders">My Orders</button>
+    <button onclick="showPage('agent')" id="btn-agent" class="agent-btn">🤝 Become Agent</button>
+    <button onclick="showPage('admin')" id="btn-admin" class="hidden">👑 Admin</button>
+  </nav>
+  <div class="userBox">
+    <div class="wallet">💰 GH₵ <span id="wallet">0.00</span> | 🛒 <span id="cartCount">0</span></div>
+    <span id="userNameLabel">Guest</span>
+    <button id="loginBtn" onclick="openAuth()" style="background:var(--gold)">Login / Sign Up</button>
+    <button id="logoutBtn" onclick="logout()" class="hidden" style="background:var(--red);color:white">Logout</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="badge-top">⚡ #1 FASTEST DELIVERY IN ACCRA • 2 MINS DELIVERY • AGENT PROGRAM NOW OPEN</div>
+  <h1>PLEASANT <span>FAST DELIVERY</span><br>SHOP</h1>
+  <p>Buy Data, Airtime, Shop & Research - Delivered Fast in Ghana. MTN • Telecel • AirtelTigo • Auto Vendor API • SMS Tracking</p>
+  <a class="wa-btn" href="https://wa.me/233538560561?text=Hello%20Pleasant%20Fast%20Delivery%20Shop,%20I%20want%20to%20buy%20data" target="_blank">💬 WhatsApp: 0538560561</a>
+  <a class="agent-hero-btn" href="#" onclick="showPage('agent');return false">🤝 Become An Agent - Earn Daily →</a><br>
+  <div class="search"><input id="searchInput" placeholder="Enter Tracking ID AP-... or search product..."><button onclick="searchAll()">Search / Track →</button></div>
+  <div class="hero-stats">
+    <div><b>2,400+</b><span>Happy Customers</span></div>
+    <div><b>120+</b><span>Active Agents</span></div>
+    <div><b>2 Mins</b><span>Avg Delivery</span></div>
+    <div><b>5% - 10%</b><span>Agent Commission</span></div>
+  </div>
+</div>
+
+<div class="container">
+<div class="promo">🔥 TODAY'S OFFER: MTN 10GB only GH₵42 • MTN 5GB GH₵22 • Airtime 2% Bonus • Agents Earn 5-10% On Every Sale!</div>
+
+<div class="agent-banner">
+  <h2>🤝 JOIN AS AN AGENT - EARN MONEY DAILY!</h2>
+  <p>Register FREE, get your own link, share it, earn 5% - 10% commission on every Data, Airtime & Shop order from your customers.</p>
+  <button class="copy-btn" onclick="showPage('agent')" style="background:white;color:#7C4DFF;padding:12px 22px;font-size:14px">Register As Agent Now →</button>
+  <button class="copy-btn" onclick="copyAgentLinkGeneral()" style="background:#0B1026">Copy Agent Registration Link</button>
+  <p style="font-size:12px;margin-top:8px">Share this link: <b id="agentLinkTop">https://pleasant-fast-delivery-shop.netlify.app/?ref=AGENT</b></p>
+</div>
+
+<div class="cat-row">
+  <div class="cat active" onclick="showPage('data')"><span>📶</span><b>Data</b></div>
+  <div class="cat" onclick="showPage('airtime')"><span>📞</span><b>Airtime</b></div>
+  <div class="cat" onclick="showPage('shop')"><span>📱</span><b>Phones</b></div>
+  <div class="cat" onclick="showPage('shop')"><span>🎧</span><b>Accessories</b></div>
+  <div class="cat" onclick="showPage('shop')"><span>💻</span><b>Laptops</b></div>
+  <div class="cat" onclick="showPage('research')"><span>📚</span><b>Research</b></div>
+  <div class="cat" onclick="showPage('agent')"><span>🤝</span><b>Agent</b></div>
+  <div class="cat" onclick="showPage('track')"><span>📦</span><b>Track</b></div>
+</div>
+
+<div id="page-home">
+  <div class="section-title">🔥 Popular Today</div><div class="grid" id="homeGrid"></div>
+  <div class="section-title">✨ Why Pleasant?</div>
+  <div class="grid">
+    <div class="feature"><span>⚡</span><div><b>Lightning Fast</b><p>Data in under 2 minutes via automatic vendor API</p></div></div>
+    <div class="feature"><span>💰</span><div><b>Cheapest Prices</b><p>Wholesale bundles - save on every order</p></div></div>
+    <div class="feature"><span>📩</span><div><b>SMS Tracking</b><p>Get SMS at every step. Track with AP-... ID</p></div></div>
+    <div class="feature"><span>🤝</span><div><b>Agent Program</b><p>Become agent, share link, earn 5-10% daily</p></div></div>
+  </div>
+  <div class="section-title">📊 Live Status</div>
+  <div class="grid">
+    <div class="card"><h3>🟢 Vendor API</h3><p id="vendorStatus">Checking...</p><button onclick="checkVendorHealth()">Check Vendor</button></div>
+    <div class="card"><h3>📱 SMS Service</h3><p>Arkesel Ready</p><button onclick="testSMS()">Send Test SMS</button></div>
+    <div class="card"><h3>💬 WhatsApp</h3><p>0538560561</p><button onclick="testWhatsApp()">Test WhatsApp</button></div>
+    <div class="card"><h3>🤝 Agents</h3><p id="agentCountHome">120+ Agents Earning</p><button onclick="showPage('agent')">Join Now</button></div>
+  </div>
+</div>
+
+<!-- AGENT PAGE -->
+<div id="page-agent" class="hidden">
+  <div class="agent-banner"><h2>🤝 PLEASANT AGENT PROGRAM</h2><p>Earn 5% on Data & Airtime, 10% on Shopping & Research. No capital needed. Work from phone.</p></div>
+  <div class="grid">
+    <div class="card"><h3>💰 5% Commission</h3><p>On every Data & Airtime order from your link</p><span class="badge badge-purple">DATA / AIRTIME</span></div>
+    <div class="card"><h3>🛍️ 10% Commission</h3><p>On Shopping & Research orders</p><span class="badge badge-purple">SHOP / RESEARCH</span></div>
+    <div class="card"><h3>⚡ Instant Payout</h3><p>Withdraw to MoMo anytime, minimum GH₵20</p><span class="badge">MOMO</span></div>
+    <div class="card"><h3>📊 Agent Dashboard</h3><p>See clicks, sales, earnings live</p><span class="badge badge-blue">LIVE</span></div>
+  </div>
+
+  <!-- AGENT REGISTRATION FORM -->
+  <div class="form-box" style="margin-top:18px" id="agentRegisterBox">
+    <h2>📝 Agent Registration - FREE</h2>
+    <p class="small">Fill to get your Agent ID & Referral Link. Share link, earn commission.</p>
+    <input id="agentName" placeholder="Full Name *">
+    <input id="agentPhone" placeholder="Phone / WhatsApp e.g 0538560561 *">
+    <input id="agentEmail" placeholder="Email *">
+    <input id="agentLocation" placeholder="Location e.g Accra, Kumasi, Tamale">
+    <select id="agentType"><option value="Data Agent">Data & Airtime Agent</option><option value="Shop Agent">Shopping Agent</option><option value="Research Agent">Research Agent</option><option value="All">All Products Agent</option></select>
+    <select id="agentPayment"><option value="MoMo">Payout - MTN MoMo</option><option value="Telecel Cash">Payout - Telecel Cash</option><option value="AirtelTigo Money">Payout - AirtelTigo Money</option><option value="Bank">Payout - Bank Transfer</option></select>
+    <input id="agentMoMo" placeholder="MoMo Number for Payout *">
+    <label><input type="checkbox" id="agentAgree" checked style="width:auto"> I agree to Pleasant Agent Terms - I will not scam customers</label>
+    <button class="btn btn-purple" onclick="registerAgent()">Register As Agent → Get My Link</button>
+    <p id="agentMsg"></p>
+    <p class="small">Already an Agent? <a href="#" onclick="showAgentLogin();return false">Login to Dashboard</a> • Or WhatsApp 0538560561 to register</p>
+    <button class="btn btn-dark" onclick="copyAgentLinkGeneral()">📋 Copy Agent Registration Link to Share</button>
+  </div>
+
+  <!-- AGENT DASHBOARD -->
+  <div class="form-box hidden" id="agentDashboardBox" style="margin-top:18px;max-width:700px">
+    <h2>👋 Welcome Agent <span id="agentDashName"></span></h2>
+    <p>Agent ID: <b id="agentDashId"></b> • Status: <span class="badge">ACTIVE ✅</span></p>
+    <div class="stat-grid">
+      <div class="stat"><span>Total Earnings</span><b id="agentEarnings">GH₵0</b></div>
+      <div class="stat"><span>Total Sales</span><b id="agentSales">0</b></div>
+      <div class="stat"><span>Referrals</span><b id="agentRefs">0</b></div>
+      <div class="stat"><span>Available to Withdraw</span><b id="agentBalance">GH₵0</b></div>
+    </div>
+    <h3>🔗 Your Referral Link - Share This!</h3>
+    <div class="ref-box" id="agentRefLink"></div>
+    <button class="copy-btn" onclick="copyMyAgentLink()">📋 Copy My Link</button>
+    <button class="copy-btn" onclick="shareAgentWhatsApp()" style="background:#25D366">💬 Share on WhatsApp</button>
+    <button class="copy-btn" onclick="shareAgentSMS()" style="background:#2563EB">📩 Share via SMS</button>
+    <h3 style="margin-top:14px">💸 Withdraw Earnings</h3>
+    <input id="withdrawAmt" type="number" placeholder="Amount GH₵ - Min 20">
+    <button class="btn btn-gold" onclick="withdrawAgent()">Request Withdrawal to MoMo</button>
+    <p id="withdrawMsg"></p>
+    <h3 style="margin-top:14px">📋 My Referrals / Orders</h3>
+    <table><thead><tr><th>Customer</th><th>Item</th><th>Commission</th><th>Date</th></tr></thead><tbody id="agentOrdersBody"></tbody></table>
+    <br><button class="btn btn-red" onclick="logoutAgent()">Logout Agent Dashboard</button>
+  </div>
+
+  <div class="form-box" style="margin-top:14px">
+    <h3>How Agent Program Works</h3>
+    <p style="font-size:14px;line-height:1.7">
+    <b>1.</b> Register FREE above → Get Agent ID e.g <b>PFD-AGENT-1234</b><br>
+    <b>2.</b> Copy your referral link → Share on WhatsApp Status, TikTok, Facebook<br>
+    <b>3.</b> Customer clicks your link & buys → You earn 5-10% automatically<br>
+    <b>4.</b> Withdraw to MoMo when you reach GH₵20<br>
+    <b>Questions?</b> WhatsApp <a href="https://wa.me/233538560561">0538560561</a>
+    </p>
+  </div>
+</div>
+
+<div id="page-data" class="hidden">
+  <div class="tabs" id="dataTabs"></div><div class="grid" id="dataGrid"></div>
+  <div class="form-box" style="margin-top:16px"><h2>Buy Data - Auto Delivery ⚡</h2>
+    <p id="refNotice" class="small hidden" style="background:#EDE9FE;padding:8px;border-radius:8px">🤝 You are buying via Agent <b id="refAgentName"></b> - Agent will earn commission. Thank you for supporting them!</p>
+    <label>NETWORK</label><select id="dataNetwork" onchange="renderData(this.value)"><option>MTN</option><option>Telecel</option><option>AirtelTigo</option></select>
+    <label>BUNDLE</label><select id="dataBundle"></select>
+    <label>RECIPIENT PHONE</label><input id="dataPhone" placeholder="0538560561">
+    <label>PAYMENT</label><select id="dataPay"><option value="wallet">Wallet Balance</option><option value="paystack">Paystack - MoMo / Card</option></select>
+    <button class="btn" onclick="buyData()">Buy Data - Auto Send →</button><p id="dataMsg"></p>
+    <div id="dataTracking" class="hidden"><h3>Delivery Progress</h3><div class="tracker" id="dataTracker"></div></div>
+  </div>
+</div>
+
+<div id="page-airtime" class="hidden">
+  <div class="form-box"><h2>📞 Buy Airtime - Instant</h2>
+    <label>NETWORK</label><select id="airNetwork"><option>MTN</option><option>Telecel</option><option>AirtelTigo</option></select>
+    <label>PHONE</label><input id="airPhone" placeholder="0538560561"><label>AMOUNT GH₵</label><input id="airAmount" type="number" value="10">
+    <div class="tabs"><button onclick="setAir(5)">GH₵5</button><button onclick="setAir(10)">GH₵10</button><button onclick="setAir(20)">GH₵20</button><button onclick="setAir(50)">GH₵50</button><button onclick="setAir(100)">GH₵100</button></div>
+    <label>PAYMENT</label><select id="airPay"><option value="wallet">Wallet</option><option value="paystack">Paystack</option></select>
+    <button class="btn btn-blue" onclick="buyAirtime()">Send Airtime Instantly →</button><p id="airMsg"></p>
+  </div>
+</div>
+
+<div id="page-shop" class="hidden">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap"><h2>🛍️ Shopping</h2><button onclick="openAddProduct()" class="btn btn-gold" style="width:auto;padding:10px 16px" id="addProductBtn">+ Add Product</button></div>
+  <div class="tabs" id="shopTabs"></div><div class="grid" id="shopGrid"></div>
+</div>
+
+<div id="page-research" class="hidden">
+  <h2>📚 Research Services</h2><br>
+  <div class="grid">
+    <div class="card"><div class="ribbon">POPULAR</div><h3>Assignment Help</h3><p>From GH₵50</p><button onclick="orderResearch('Assignment Help',50)">Order →</button></div>
+    <div class="card"><h3>Project / Thesis</h3><p>From GH₵300</p><button onclick="orderResearch('Project / Thesis',300)">Order →</button></div>
+    <div class="card"><h3>Data Analysis SPSS</h3><p>From GH₵150</p><button onclick="orderResearch('Data Analysis',150)">Order →</button></div>
+    <div class="card"><h3>Proposal</h3><p>From GH₵120</p><button onclick="orderResearch('Proposal Writing',120)">Order →</button></div>
+    <div class="card"><h3>Literature Review</h3><p>From GH₵180</p><button onclick="orderResearch('Literature Review',180)">Order →</button></div>
+    <div class="card"><h3>Editing</h3><p>From GH₵40</p><button onclick="orderResearch('Editing',40)">Order →</button></div>
+  </div>
+  <div class="form-box" style="margin-top:16px"><h2>Request Research</h2>
+    <input id="resTopic" placeholder="Topic"><select id="resType"><option>Assignment</option><option>Project</option><option>Thesis</option><option>Data Analysis</option><option>Proposal</option></select>
+    <textarea id="resDesc" placeholder="Describe, deadline, pages..."></textarea><input id="resPhone" placeholder="Your WhatsApp Number">
+    <label>PAYMENT</label><select id="resPay"><option value="wallet">Wallet</option><option value="paystack">Paystack</option></select>
+    <button class="btn btn-gold" onclick="submitResearch()">Submit Request →</button><p id="resMsg"></p>
+  </div>
+</div>
+
+<div id="page-track" class="hidden">
+  <div class="form-box"><h2>📦 Track Your Order</h2>
+    <input id="trackId" placeholder="AP-XXXXXX"><button class="btn btn-dark" onclick="trackOrder()">Track Order →</button><div id="trackResult"></div>
+    <p style="margin-top:12px">Need help? <a href="https://wa.me/233538560561" target="_blank">Chat 0538560561</a></p>
+  </div><br><div class="form-box"><h3>🔔 Notification History</h3><div id="notifHistory"></div></div>
+</div>
+
+<div id="page-orders" class="hidden">
+  <h2>My Orders & Wallet</h2>
+  <table><thead><tr><th>Order ID</th><th>Item</th><th>Price</th><th>Payment</th><th>Status</th><th>Date</th><th>Track</th></tr></thead><tbody id="orderBody"></tbody></table><br>
+  <div class="form-box"><h3>💰 Top Up Wallet - Paystack (MoMo/Card)</h3><input id="topupAmt" type="number" placeholder="Amount GH₵"><input id="topupEmail" placeholder="Email for receipt"><button class="btn" onclick="topupPaystack()">Top Up with Paystack →</button></div>
+</div>
+
+<div id="page-admin" class="hidden">
+  <h2>👑 Admin Dashboard - Pleasant Fast Delivery</h2>
+  <div class="stat-grid">
+    <div class="stat"><span>Total Revenue</span><b id="statRevenue">GH₵0</b></div>
+    <div class="stat"><span>Total Orders</span><b id="statOrders">0</b></div>
+    <div class="stat"><span>Customers</span><b id="statUsers">0</b></div>
+    <div class="stat"><span>Agents</span><b id="statAgents">0</b></div>
+    <div class="stat"><span>Agent Payouts</span><b id="statAgentPayout">GH₵0</b></div>
+    <div class="stat"><span>SMS Sent</span><b id="statSMS">0</b></div>
+  </div>
+  <div class="tabs"><button class="active" onclick="adminTab('all',this)">All Orders</button><button onclick="adminTab('Pending',this)">Pending</button><button onclick="adminTab('Processing',this)">Processing</button><button onclick="adminTab('Delivered',this)">Delivered</button><button onclick="adminTab('Failed',this)">Failed</button><button onclick="adminTab('agents',this)">🤝 Agents</button></div>
+  <div id="adminOrdersWrap"><table><thead><tr><th>Order ID</th><th>Customer</th><th>Item</th><th>Price</th><th>Agent / Commission</th><th>Status</th><th>Action</th></tr></thead><tbody id="adminOrderBody"></tbody></table></div>
+  <div id="adminAgentsWrap" class="hidden"><h3>All Agents</h3><table><thead><tr><th>Agent ID</th><th>Name</th><th>Phone</th><th>Type</th><th>Earnings</th><th>Referrals</th><th>Link</th><th>Action</th></tr></thead><tbody id="adminAgentBody"></tbody></table></div>
+  <br>
+  <div class="grid">
+    <div class="form-box"><h3>⚙️ API Settings</h3>
+      <label>Paystack Public Key</label><input id="paystackKey" placeholder="pk_live_...">
+      <label>Vendor Provider</label><select id="vendorProvider"><option value="hubtel">Hubtel</option><option value="arkesel">Arkesel</option><option value="npontu">Npontu</option><option value="demo">Demo Mode</option></select>
+      <label>Vendor API Key</label><input id="vendorKey" placeholder="Hubtel Client ID / Arkesel Key">
+      <label>Vendor Secret</label><input id="vendorSecret" placeholder="Secret" type="password">
+      <label>Arkesel SMS Key</label><input id="arkeselSmsKey" placeholder="Arkesel SMS Key">
+      <label>Sender ID</label><input id="arkeselSender" placeholder="PLEASANT SHOP">
+      <label>WhatsApp Token</label><input id="waToken" placeholder="EAA...">
+      <label>WhatsApp Phone ID</label><input id="waPhoneId" placeholder="123456">
+      <label>Admin WhatsApp (233...)</label><input id="adminWhats" value="233538560561">
+      <label>Agent Commission % - Data/Airtime</label><input id="agentCommData" type="number" value="5">
+      <label>Agent Commission % - Shop/Research</label><input id="agentCommShop" type="number" value="10">
+      <label>Auto SMS</label><select id="autoSMS"><option value="yes">Yes</option><option value="no">No</option></select>
+      <label>Auto WhatsApp</label><select id="autoWA"><option value="yes">Yes</option><option value="no">No</option></select>
+      <button class="btn btn-dark" onclick="saveAdminSettings()">Save Settings</button><p id="adminMsg"></p>
+      <button class="btn btn-orange" onclick="checkVendorHealth()">Test Vendor</button>
+      <button class="btn btn-blue" onclick="testSMS()">Test SMS</button>
+      <button class="btn btn-gold" onclick="testWhatsApp()">Test WhatsApp</button>
+    </div>
+    <div class="form-box"><h3>📦 Manual Fulfilment & Agent Payout</h3><input id="manualOrderId" placeholder="Order ID AP-..."><input id="manualVendorRef" placeholder="Vendor Ref"><select id="manualStatus"><option>Processing</option><option>Delivered</option><option>Failed</option></select><button class="btn" onclick="manualUpdate()">Update & Notify</button><hr><h3>Pay Agent</h3><input id="payoutAgentId" placeholder="Agent ID e.g PFD-AGENT-1234"><input id="payoutAmt" type="number" placeholder="Amount GH₵"><button class="btn btn-purple" onclick="payAgent()">Mark Agent Paid via MoMo</button><button class="btn btn-red" onclick="clearAllData()">Clear All Data</button></div>
+  </div><br><h3>All Users</h3><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Wallet</th><th>Role</th></tr></thead><tbody id="adminUserBody"></tbody></table><br><h3>Notification Logs</h3><div id="adminNotifLog"></div>
+</div>
+</div>
+
+<div class="cart" onclick="openCart()">🛒 Cart <span id="cartCount2">0</span> - Checkout →</div>
+<div class="modal" id="authModal"><div class="modal-inner"><h2 id="authTitle">Welcome Back 👋</h2><div class="tabs"><button id="tabLogin" class="active" onclick="switchAuth('login')">Login</button><button id="tabSignup" onclick="switchAuth('signup')">Sign Up</button></div><div id="signupFields" class="hidden"><input id="authName" placeholder="Full Name"><input id="authPhone" placeholder="Phone e.g 0538560561"></div><input id="authEmail" placeholder="Email"><input id="authPass" type="password" placeholder="Password"><button class="btn btn-blue" onclick="handleAuth()" id="authBtn">Login →</button><p class="small">Admin: admin@pleasant.com / admin123</p><br><button onclick="closeAuth()">Close</button></div></div>
+<div class="modal" id="cartModal"><div class="modal-inner"><h2>🛒 Your Cart</h2><div id="cartItems"></div><h3 id="cartTotal"></h3><input id="checkoutPhone" placeholder="Delivery Phone / Address"><label>PAYMENT</label><select id="checkoutPay"><option value="wallet">Wallet</option><option value="paystack">Paystack - MoMo / Card</option></select><button class="btn" onclick="checkout()">Checkout →</button><br><br><button onclick="closeCart()">Close</button></div></div>
+<div class="modal" id="productModal"><div class="modal-inner"><h2>Add Product</h2><input id="pName" placeholder="Product Name"><input id="pPrice" type="number" placeholder="Price GH₵"><select id="pCat"><option>Phones</option><option>Accessories</option><option>Laptops</option><option>Fashion</option></select><input id="pImg" placeholder="Image URL"><button class="btn" onclick="saveProduct()">Save Product</button><br><br><button onclick="closeProductModal()">Close</button></div></div>
+
+<footer>
+<p><b>PLEASANT FAST DELIVERY SHOP</b> • Accra, Ghana • WhatsApp: <a href="https://wa.me/233538560561">0538560561</a></p>
+<p><a href="#" onclick="showPage('agent');return false" style="color:#FFC107">🤝 Become An Agent - Earn Daily</a> | <a href="#" onclick="copyAgentLinkGeneral();return false">📋 Copy Agent Registration Link</a> | <a href="https://wa.me/233538560561?text=I%20want%20to%20become%20an%20agent">Register via WhatsApp</a></p>
+<p>© 2026 • Paystack Secured • Hubtel / Arkesel Vendor API • Agent Program</p>
+<p style="margin-top:10px"><a href="https://wa.me/233538560561" style="background:#25D366;color:white;padding:10px 20px;border-radius:100px;display:inline-block">💬 Order on WhatsApp Now</a></p>
+</footer>
+
+<script>
+// ===== CONFIG =====
+let CONFIG={ paystackKey: localStorage.getItem('ap_paystack_key')||"pk_test_xxxxxxxxxxxxxxxxxxxxxxxx", vendorProvider: localStorage.getItem('ap_vendor_provider')||"demo", vendorKey: localStorage.getItem('ap_vendor_key')||"", vendorSecret: localStorage.getItem('ap_vendor_secret')||"", arkeselSmsKey: localStorage.getItem('ap_arkesel_sms')||"", arkeselSender: localStorage.getItem('ap_arkesel_sender')||"PLEASANT SHOP", waToken: localStorage.getItem('ap_wa_token')||"", waPhoneId: localStorage.getItem('ap_wa_phone')||"", adminWhats: localStorage.getItem('ap_admin_whats')||"233538560561", autoSMS: localStorage.getItem('ap_auto_sms')||"yes", autoWA: localStorage.getItem('ap_auto_wa')||"yes", commData: parseFloat(localStorage.getItem('ap_comm_data')||"5"), commShop: parseFloat(localStorage.getItem('ap_comm_shop')||"10") };
+let SITE_URL = window.location.origin + window.location.pathname;
+if(SITE_URL.includes("file:")) SITE_URL="https://pleasant-fast-delivery-shop.netlify.app/";
+let users=JSON.parse(localStorage.getItem('ap_users')||'[]'); let currentUser=JSON.parse(localStorage.getItem('ap_current')||'null'); let cart=JSON.parse(localStorage.getItem('ap_cart')||'[]'); let orders=JSON.parse(localStorage.getItem('ap_orders')||'[]'); let notifications=JSON.parse(localStorage.getItem('ap_notifs')||'[]'); let products=JSON.parse(localStorage.getItem('ap_products')||'null'); let agents=JSON.parse(localStorage.getItem('ap_agents')||'[]'); let currentAgent=JSON.parse(localStorage.getItem('ap_current_agent')||'null'); let referralAgentId = new URLSearchParams(window.location.search).get('ref') || localStorage.getItem('ap_ref') || null;
+if(referralAgentId){ localStorage.setItem('ap_ref', referralAgentId); }
+if(!products){ products=[{id:1,name:"iPhone 13 128GB",price:5200,cat:"Phones",img:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400"},{id:2,name:"Samsung Galaxy A55",price:3400,cat:"Phones",img:"https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400"},{id:3,name:"Wireless Earbuds Pro",price:180,cat:"Accessories",img:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400"},{id:4,name:"Smart Watch",price:350,cat:"Accessories",img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"},{id:5,name:"Laptop HP 15",price:6800,cat:"Laptops",img:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400"},{id:6,name:"Sneakers - Nike Air",price:450,cat:"Fashion",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"},{id:7,name:"Power Bank 20000mAh",price:220,cat:"Accessories",img:"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400"},{id:8,name:"MTN Router + 50GB",price:420,cat:"Phones",img:"https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400"}]; localStorage.setItem('ap_products',JSON.stringify(products)); }
+if(!users.find(u=>u.email==="admin@pleasant.com")){ users.push({name:"Albert Pleasant",email:"admin@pleasant.com",phone:"0538560561",pass:"admin123",role:"admin",wallet:5000}); localStorage.setItem('ap_users',JSON.stringify(users)); }
+if(!agents.find(a=>a.id==="PFD-AGENT-DEMO")){ agents.push({id:"PFD-AGENT-DEMO",name:"Demo Agent",phone:"0538560561",email:"demo@agent.com",location:"Accra",type:"All",payment:"MoMo",momo:"0538560561",earnings:45, sales:12, referrals:8, balance:45, status:"ACTIVE", date:new Date().toLocaleString()}); localStorage.setItem('ap_agents',JSON.stringify(agents)); }
+function saveAll(){ localStorage.setItem('ap_users',JSON.stringify(users)); localStorage.setItem('ap_cart',JSON.stringify(cart)); localStorage.setItem('ap_orders',JSON.stringify(orders)); localStorage.setItem('ap_notifs',JSON.stringify(notifications)); localStorage.setItem('ap_agents',JSON.stringify(agents)); if(currentUser) localStorage.setItem('ap_current',JSON.stringify(currentUser)); if(currentAgent) localStorage.setItem('ap_current_agent',JSON.stringify(currentAgent)); }
+function saveProducts(){ localStorage.setItem('ap_products',JSON.stringify(products)); }
+function getWallet(){ return currentUser?currentUser.wallet:0; } function setWallet(v){ if(currentUser){ currentUser.wallet=v; let u=users.find(x=>x.email===currentUser.email); if(u) u.wallet=v; saveAll(); updateUI(); } }
+function getAgentLink(agentId){ return SITE_URL + "?ref=" + agentId; }
+function updateUI(){
+ document.getElementById('wallet').innerText=getWallet().toFixed(2); document.getElementById('cartCount').innerText=cart.length; document.getElementById('cartCount2').innerText=cart.length; document.getElementById('userNameLabel').innerText=currentUser?currentUser.name+" ("+currentUser.role+")":"Guest"; document.getElementById('loginBtn').classList.toggle('hidden',!!currentUser); document.getElementById('logoutBtn').classList.toggle('hidden',!currentUser); document.getElementById('btn-admin').classList.toggle('hidden',!(currentUser&&currentUser.role==='admin')); document.getElementById('addProductBtn').style.display=(currentUser&&currentUser.role==='admin')?'block':'none'; document.getElementById('topupEmail').value=currentUser?currentUser.email:"";
+ document.getElementById('paystackKey').value=CONFIG.paystackKey; document.getElementById('vendorProvider').value=CONFIG.vendorProvider; document.getElementById('vendorKey').value=CONFIG.vendorKey; document.getElementById('vendorSecret').value=CONFIG.vendorSecret; document.getElementById('arkeselSmsKey').value=CONFIG.arkeselSmsKey; document.getElementById('arkeselSender').value=CONFIG.arkeselSender; document.getElementById('waToken').value=CONFIG.waToken; document.getElementById('waPhoneId').value=CONFIG.waPhoneId; document.getElementById('adminWhats').value=CONFIG.adminWhats; document.getElementById('autoSMS').value=CONFIG.autoSMS; document.getElementById('autoWA').value=CONFIG.autoWA; document.getElementById('agentCommData').value=CONFIG.commData; document.getElementById('agentCommShop').value=CONFIG.commShop;
+ document.getElementById('vendorStatus').innerText=CONFIG.vendorProvider==='demo'?"Demo Mode - Set Hubtel key in Admin":""+CONFIG.vendorProvider.toUpperCase()+" Connected"; document.getElementById('statSMS').innerText=notifications.filter(n=>n.channel==='SMS').length; document.getElementById('agentLinkTop').innerText = SITE_URL + "?ref=AGENT";
+ document.getElementById('agentCountHome').innerText = (agents.length+120) + "+ Agents Earning";
+ // Referral notice
+ if(referralAgentId){ let ag=agents.find(a=>a.id===referralAgentId); document.getElementById('refNotice').classList.remove('hidden'); document.getElementById('refAgentName').innerText = ag? ag.name + " ("+ag.id+")" : referralAgentId; }
+ if(currentAgent){ document.getElementById('agentRegisterBox').classList.add('hidden'); document.getElementById('agentDashboardBox').classList.remove('hidden'); renderAgentDashboard(); }
+}
+// ===== AGENT SYSTEM =====
+function registerAgent(){
+ let name=document.getElementById('agentName').value.trim(), phone=document.getElementById('agentPhone').value.trim(), email=document.getElementById('agentEmail').value.trim(), loc=document.getElementById('agentLocation').value.trim(), type=document.getElementById('agentType').value, pay=document.getElementById('agentPayment').value, momo=document.getElementById('agentMoMo').value.trim();
+ if(!name||!phone||!email||!momo) return alert("Fill Name, Phone, Email and MoMo Number");
+ if(!document.getElementById('agentAgree').checked) return alert("Tick agree box");
+ if(agents.find(a=>a.email===email||a.phone===phone)) return alert("You already registered with this phone/email. Login to dashboard.");
+ let id="PFD-AGENT-"+Math.floor(1000+Math.random()*9000);
+ let ag={id,name,phone,email,location:loc,type,payment:pay,momo,earnings:0,sales:0,referrals:0,balance:0,status:"ACTIVE",date:new Date().toLocaleString()};
+ agents.push(ag); currentAgent=ag; saveAll(); updateUI();
+ document.getElementById('agentMsg').innerHTML=`✅ <b>Congratulations ${name}!</b> Your Agent ID is <b>${id}</b>. Your referral link is ready below. Share it to earn!`;
+ let msg=`Hello Pleasant Fast Delivery, I just registered as Agent. Name: ${name}, ID: ${id}, Phone: ${phone}, Location: ${loc}`;
+ window.open(`https://wa.me/233538560561?text=${encodeURIComponent(msg)}`,'_blank');
+ alert(`Welcome Agent ${name}! Your ID: ${id}. Copy your link and start earning!`);
+ showPage('agent');
+}
+function showAgentLogin(){
+ let phone=prompt("Enter your Agent Phone to login to dashboard"); if(!phone) return;
+ let ag=agents.find(a=>a.phone===phone); if(!ag) return alert("Agent not found. Register first.");
+ currentAgent=ag; saveAll(); updateUI(); showPage('agent'); alert("Welcome back "+ag.name);
+}
+function renderAgentDashboard(){
+ if(!currentAgent) return;
+ document.getElementById('agentDashName').innerText=currentAgent.name;
+ document.getElementById('agentDashId').innerText=currentAgent.id;
+ document.getElementById('agentEarnings').innerText="GH₵"+currentAgent.earnings.toFixed(2);
+ document.getElementById('agentSales').innerText=currentAgent.sales;
+ document.getElementById('agentRefs').innerText=currentAgent.referrals;
+ document.getElementById('agentBalance').innerText="GH₵"+currentAgent.balance.toFixed(2);
+ document.getElementById('agentRefLink').innerText=getAgentLink(currentAgent.id);
+ let myOrders=orders.filter(o=>o.agentId===currentAgent.id);
+ document.getElementById('agentOrdersBody').innerHTML=myOrders.length? myOrders.map(o=>`<tr><td>${o.customer}</td><td>${o.item}</td><td>GH₵${o.commission?.toFixed(2)||0}</td><td>${o.date}</td></tr>`).join(''):"<tr><td colspan=4>No referrals yet. Share your link!</td></tr>";
+}
+function copyMyAgentLink(){ let link=getAgentLink(currentAgent.id); navigator.clipboard.writeText(link).then(()=>alert("Copied: "+link)); }
+function copyAgentLinkGeneral(){
+ let link=SITE_URL+"?ref=AGENT"; 
+ // This is the general registration link - anyone who clicks can register
+ let regLink=SITE_URL.split('?')[0]+"#agent";
+ // Use clean share link
+ let shareLink = SITE_URL + "?ref=JOIN";
+ navigator.clipboard.writeText(shareLink).then(()=>alert("✅ Agent Registration Link Copied!\n\n"+shareLink+"\n\nShare this link - anyone who clicks can register as Agent. Or share: https://wa.me/233538560561?text=I want to become an agent"));
+}
+function shareAgentWhatsApp(){ if(!currentAgent) return alert("Register first"); let link=getAgentLink(currentAgent.id); let msg=`🔥 Buy Cheap Data, Airtime & Shop from Pleasant Fast Delivery! MTN 10GB GH₵42, 5GB GH₵22. Fast Delivery in 2 Mins! Order here: ${link} Or WhatsApp 0538560561`; window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`,'_blank'); }
+function shareAgentSMS(){ if(!currentAgent) return alert("Register first"); let link=getAgentLink(currentAgent.id); alert("Copy this SMS to send:\n\nBuy Cheap Data from Pleasant Fast Delivery! MTN 10GB GH₵42. Order: "+link+" WhatsApp 0538560561"); }
+function withdrawAgent(){ let amt=parseFloat(document.getElementById('withdrawAmt').value); if(!amt||amt<20) return alert("Minimum withdrawal GH₵20"); if(amt>currentAgent.balance) return alert("Insufficient balance. Balance GH₵"+currentAgent.balance); currentAgent.balance-=amt; saveAll(); updateUI(); document.getElementById('withdrawMsg').innerText=`✅ Withdrawal GH₵${amt} requested! We will send to ${currentAgent.momo} (${currentAgent.payment}) within 24hrs. WhatsApp 0538560561 if delay.`; let msg=`Agent Withdrawal Request: ${currentAgent.name} (${currentAgent.id}) wants GH₵${amt} to ${currentAgent.momo}`; window.open(`https://wa.me/233538560561?text=${encodeURIComponent(msg)}`,'_blank'); }
+function logoutAgent(){ currentAgent=null; localStorage.removeItem('ap_current_agent'); document.getElementById('agentRegisterBox').classList.remove('hidden'); document.getElementById('agentDashboardBox').classList.add('hidden'); alert("Agent logged out"); }
+function creditAgent(order, price, isShop){
+ if(!referralAgentId) return 0;
+ let ag=agents.find(a=>a.id===referralAgentId); if(!ag) return 0;
+ let rate=isShop? CONFIG.commShop : CONFIG.commData;
+ let comm = price * rate / 100;
+ ag.earnings+=comm; ag.balance+=comm; ag.sales+=1; ag.referrals+=1; saveAll();
+ // Notify agent via SMS log
+ logNotif(order.trackingId,"SMS",ag.phone,`Agent Commission: You earned GH₵${comm.toFixed(2)} from order ${order.trackingId}`,"Sent");
+ return comm;
+}
+function payAgent(){ let id=document.getElementById('payoutAgentId').value.trim(), amt=parseFloat(document.getElementById('payoutAmt').value); let ag=agents.find(a=>a.id===id); if(!ag||!amt) return alert("Enter Agent ID and amount"); ag.balance=Math.max(0, ag.balance-amt); saveAll(); renderAdmin(); alert(`Paid GH₵${amt} to ${ag.name} (${ag.id}) via MoMo ${ag.momo}`); }
+
+// ===== AUTH =====
+let authMode='login'; function openAuth(){ document.getElementById('authModal').classList.add('show'); } function closeAuth(){ document.getElementById('authModal').classList.remove('show'); } function switchAuth(m){ authMode=m; document.getElementById('signupFields').classList.toggle('hidden',m==='login'); document.getElementById('tabLogin').classList.toggle('active',m==='login'); document.getElementById('tabSignup').classList.toggle('active',m==='signup'); document.getElementById('authTitle').innerText=m==='login'?"Welcome Back 👋":"Create Account 🎉"; document.getElementById('authBtn').innerText=m==='login'?"Login →":"Sign Up →"; }
+function handleAuth(){ let email=document.getElementById('authEmail').value.trim().toLowerCase(), pass=document.getElementById('authPass').value; if(!email||!pass) return alert("Fill email & password"); if(authMode==='signup'){ let name=document.getElementById('authName').value.trim(), phone=document.getElementById('authPhone').value.trim(); if(!name||!phone) return alert("Fill name & phone"); if(users.find(u=>u.email===email)) return alert("Email exists. Login."); let nu={name,email,phone,pass,role:"customer",wallet:0}; users.push(nu); currentUser=nu; saveAll(); updateUI(); closeAuth(); alert("Welcome "+name); } else { let u=users.find(x=>x.email===email&&x.pass===pass); if(!u) return alert("Wrong email/password"); currentUser=u; saveAll(); updateUI(); closeAuth(); alert("Welcome back "+u.name); if(u.role==='admin') showPage('admin'); } }
+function logout(){ currentUser=null; localStorage.removeItem('ap_current'); cart=[]; saveAll(); updateUI(); showPage('home'); alert("Logged out"); } function requireLogin(){ if(!currentUser){ openAuth(); alert("Please login first"); return false; } return true; }
+function payWithPaystack(amountGHS,email,onSuccess,desc){ if(!email) email=currentUser?currentUser.email:"customer@gmail.com"; if(CONFIG.paystackKey.includes("xxxx")){ if(confirm("Demo Paystack: Simulate MoMo payment GH₵"+amountGHS+"?")) onSuccess({reference:"DEMO_"+Date.now()}); return; } let h=PaystackPop.setup({key:CONFIG.paystackKey,email,amount:Math.round(amountGHS*100),currency:"GHS",ref:'PFD_'+Math.floor(Math.random()*1000000000),metadata:{custom_fields:[{display_name:"Desc",variable_name:"desc",value:desc}]},callback:onSuccess,onClose:()=>alert("Payment cancelled")}); h.openIframe(); }
+function topupPaystack(){ if(!requireLogin()) return; let amt=parseFloat(document.getElementById('topupAmt').value), email=document.getElementById('topupEmail').value||currentUser.email; if(!amt) return alert("Enter amount"); payWithPaystack(amt,email,(res)=>{ setWallet(getWallet()+amt); let o=addOrder(`Wallet Top Up GH₵${amt}`,amt,"Paystack "+res.reference,"Delivered",false); sendNotifications(o,`Wallet topped up GH₵${amt}`); alert("✅ Wallet topped up GH₵"+amt); },"Wallet Top Up"); }
+async function vendorDeliver(order,network,phone,bundleOrAmount,type){ if(CONFIG.vendorProvider==='demo'){ await new Promise(r=>setTimeout(r,1500)); return {success:true,vendorRef:"DEMO_"+Date.now(),message:"Demo Vendor"}; } try{ if(CONFIG.vendorProvider==='hubtel'){ let res=await fetch("https://api.hubtel.com/v1/bundles/"+network.toLowerCase(),{method:"POST",headers:{"Authorization":"Basic "+btoa(CONFIG.vendorKey+":"+CONFIG.vendorSecret),"Content-Type":"application/json"},body:JSON.stringify({phone,bundle:bundleOrAmount,network,orderId:order.id})}); let data=await res.json(); return {success:res.ok,vendorRef:data.transactionId||"HUBTEL_"+Date.now(),message:"Hubtel"}; } if(CONFIG.vendorProvider==='arkesel'){ let res=await fetch("https://sms.arkesel.com/api/v2/sms/send",{method:"POST",headers:{"api-key":CONFIG.vendorKey,"Content-Type":"application/json"},body:JSON.stringify({recipients:[phone],message:bundleOrAmount,sender:CONFIG.arkeselSender})}); return {success:true,vendorRef:"ARK_"+Date.now(),message:"Arkesel"}; } }catch(e){ return {success:false,vendorRef:"",message:"Vendor error "+e.message} } return {success:false,vendorRef:"",message:"Vendor not configured"}; }
+async function checkVendorHealth(){ let el=document.getElementById('vendorStatus'); if(CONFIG.vendorProvider==='demo'){ el.innerText="Demo Mode - Add Hubtel key in Admin"; return; } el.innerText="Checking "+CONFIG.vendorProvider+"..."; await new Promise(r=>setTimeout(r,1000)); el.innerText="✅ "+CONFIG.vendorProvider.toUpperCase()+" Ready"; }
+function logNotif(orderId,channel,to,message,status){ notifications.unshift({orderId,channel,to,message,status,date:new Date().toLocaleString()}); localStorage.setItem('ap_notifs',JSON.stringify(notifications)); renderNotifHistory(); }
+async function sendSMS(to,message){ if(CONFIG.autoSMS!=="yes") return {success:false}; if(!CONFIG.arkeselSmsKey){ console.log("DEMO SMS",to,message); return {success:true,demo:true}; } try{ let res=await fetch("https://sms.arkesel.com/api/v2/sms/send",{method:"POST",headers:{"api-key":CONFIG.arkeselSmsKey,"Content-Type":"application/json"},body:JSON.stringify({sender:CONFIG.arkeselSender,message,recipients:[to.startsWith("233")?to:"233"+to.slice(1)]})}); return {success:true}; }catch(e){ return {success:false} } }
+async function sendWhatsApp(to,message){ if(CONFIG.autoWA!=="yes") return {success:false}; if(!CONFIG.waToken){ return {success:true,demo:true}; } try{ let res=await fetch(`https://graph.facebook.com/v18.0/${CONFIG.waPhoneId}/messages`,{method:"POST",headers:{"Authorization":"Bearer "+CONFIG.waToken,"Content-Type":"application/json"},body:JSON.stringify({messaging_product:"whatsapp",to:to.startsWith("233")?to:"233"+to.slice(1),type:"text",text:{body:message}})}); return {success:res.ok}; }catch(e){ return {success:false} } }
+async function sendNotifications(order,customMsg){ let phone=currentUser?currentUser.phone:"0538560561"; let msg=customMsg||`Hello ${currentUser?currentUser.name:"Customer"}, Order ${order.trackingId} - ${order.item} - Status: ${order.status}. PLEASANT FAST DELIVERY - 0538560561`; let sms=await sendSMS(phone,msg); logNotif(order.trackingId,"SMS",phone,msg,sms.success?"Sent":"Failed"); let wa=await sendWhatsApp(phone,msg); logNotif(order.trackingId,"WhatsApp",phone,msg,wa.success?"Sent":"Failed"); await sendSMS(CONFIG.adminWhats,`New Order ${order.trackingId}: ${order.item} GH₵${order.price}`); }
+function testSMS(){ let phone=prompt("Enter phone for test SMS",currentUser?currentUser.phone:"0538560561"); if(!phone) return; sendSMS(phone,"Test SMS from PLEASANT FAST DELIVERY SHOP - 0538560561 - Working!").then(r=>{ alert("SMS test sent"); logNotif("TEST","SMS",phone,"Test SMS","Sent"); }); }
+function testWhatsApp(){ let phone=prompt("Enter WhatsApp number",currentUser?currentUser.phone:"0538560561"); if(!phone) return; let msg="Hello from PLEASANT FAST DELIVERY SHOP - WhatsApp working! 0538560561"; sendWhatsApp(phone,msg).then(()=>{ window.open(`https://wa.me/233538560561?text=${encodeURIComponent(msg)}`,'_blank'); }); }
+function renderNotifHistory(){ let list=notifications.filter(n=>!currentUser||n.to===currentUser.phone||currentUser.role==='admin').slice(0,20); document.getElementById('notifHistory').innerHTML=list.length?list.map(n=>`<div class="notif"><b>${n.channel} - ${n.orderId}</b> - ${n.status}<br>${n.message}<br><small>${n.date} • To: ${n.to}</small></div>`).join(''):"<p>No notifications yet</p>"; document.getElementById('adminNotifLog').innerHTML=notifications.slice(0,20).map(n=>`<div class="notif"><b>${n.channel} ${n.orderId}</b> ${n.status} - To ${n.to} - ${n.message}</div>`).join('')||"<p>No logs</p>"; }
+function getTrackingSteps(status){ let steps=[{label:"Order Placed",desc:"Payment received"},{label:"Processing",desc:"Sending to vendor"},{label:"Vendor Delivery",desc:"Vendor sending"},{label:"Delivered",desc:"Delivered"}]; let idx=status==="Pending"?0:status==="Processing"?1:status==="Delivered"?3:1; return steps.map((s,i)=>`<div class="track-step ${i<idx?'done':''} ${i===idx?'active':''}"><b>${s.label}</b><span>${s.desc}</span></div>`).join(''); }
+function trackOrder(){ let id=document.getElementById('trackId').value.trim().toUpperCase(); if(!id) return alert("Enter Tracking ID"); let o=orders.find(x=>x.trackingId===id); let el=document.getElementById('trackResult'); if(!o){ el.innerHTML=`<div class="notif" style="background:#fee2e2">❌ Order ${id} not found</div>`; return; } el.innerHTML=`<div class="notif"><b>${o.trackingId} - ${o.item}</b><br>Price: GH₵${o.price} | Payment: ${o.payment} | Vendor Ref: ${o.vendorRef||"-"} | Agent: ${o.agentId||"Direct"}<br>Status: <span class="badge">${o.status}</span></div><div class="tracker">${getTrackingSteps(o.status)}</div><p>Questions? WhatsApp <a href="https://wa.me/233538560561">0538560561</a></p>`; }
+const dataBundles={ MTN:[{gb:"1GB",price:4.5},{gb:"2GB",price:9},{gb:"5GB",price:22},{gb:"10GB",price:42},{gb:"15GB",price:60},{gb:"30GB",price:115}], Telecel:[{gb:"1GB",price:4.2},{gb:"5GB",price:20},{gb:"10GB",price:38},{gb:"20GB",price:75}], AirtelTigo:[{gb:"1GB",price:4},{gb:"3GB",price:12},{gb:"6GB",price:23},{gb:"12GB",price:45}] };
+function showPage(p){ if(p==='admin'&&!(currentUser&&currentUser.role==='admin')){ alert("Admin only"); openAuth(); return; } document.querySelectorAll('[id^="page-"]').forEach(e=>e.classList.add('hidden')); document.getElementById('page-'+p).classList.remove('hidden'); document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active')); let btn=document.getElementById('btn-'+p); if(btn) btn.classList.add('active'); if(p==='orders') renderOrders(); if(p==='admin') renderAdmin(); if(p==='track') renderNotifHistory(); if(p==='agent' && currentAgent) renderAgentDashboard(); }
+function renderData(net="MTN"){ document.getElementById('dataTabs').innerHTML=Object.keys(dataBundles).map(n=>`<button class="${n===net?'active':''}" onclick="renderData('${n}')">${n}</button>`).join(''); document.getElementById('dataGrid').innerHTML=dataBundles[net].map(b=>`<div class="card"><h3>${net} ${b.gb}</h3><p>No Expiry • Instant Delivery</p><div class="price">GH₵ ${b.price} <s>GH₵ ${(b.price*1.25).toFixed(2)}</s></div><span class="old-price">SAVE 20%</span><button onclick="quickData('${net}','${b.gb}',${b.price})">Buy ${b.gb} →</button></div>`).join(''); document.getElementById('dataNetwork').value=net; document.getElementById('dataBundle').innerHTML=dataBundles[net].map(b=>`<option value="${b.gb}|${b.price}">${b.gb} - GH₵${b.price}</option>`).join(''); }
+function renderShop(cat="All"){ let cats=["All","Phones","Accessories","Laptops","Fashion"]; document.getElementById('shopTabs').innerHTML=cats.map(c=>`<button class="${c===cat?'active':''}" onclick="renderShop('${c}')">${c}</button>`).join(''); let list=cat==="All"?products:products.filter(x=>x.cat===cat); let isAdmin=currentUser&&currentUser.role==='admin'; document.getElementById('shopGrid').innerHTML=list.map(p=>`<div class="card"><img src="${p.img}"><h3>${p.name}</h3><p>${p.cat}</p><div class="price">GH₵ ${p.price.toLocaleString()}</div><button onclick="addToCart(${p.id})">Add to Cart 🛒</button>${isAdmin?`<button onclick="deleteProduct(${p.id})" style="background:var(--red)">Delete</button>`:''}</div>`).join(''); document.getElementById('homeGrid').innerHTML=products.slice(0,4).map(p=>`<div class="card"><img src="${p.img}"><h3>${p.name}</h3><div class="price">GH₵ ${p.price}</div><button onclick="addToCart(${p.id})">Add to Cart 🛒</button></div>`).join('')+`<div class="card"><div class="ribbon">BEST SELLER</div><h3>MTN 10GB</h3><div class="price">GH₵42 <s>GH₵52</s></div><button onclick="quickData('MTN','10GB',42)">Buy Data →</button></div><div class="card"><h3>Airtime GH₵20</h3><div class="price">GH₵20</div><button onclick="showPage('airtime')">Buy Airtime →</button></div><div class="card"><h3>Research Help</h3><div class="price">From GH₵50</div><button onclick="showPage('research')">Order →</button></div><div class="card"><h3>🤝 Become Agent</h3><div class="price">Earn 5-10%</div><button onclick="showPage('agent')" style="background:linear-gradient(90deg,#7C4DFF,#FF4081)">Join Agent →</button></div>`; }
+function addToCart(id){ if(!requireLogin()) return; let p=products.find(x=>x.id===id); cart.push(p); saveAll(); updateUI(); alert(p.name+" added ✅"); }
+function openCart(){ let total=cart.reduce((a,b)=>a+b.price,0); document.getElementById('cartItems').innerHTML=cart.length?cart.map((c,i)=>`<p>${c.name} - GH₵${c.price} <button onclick="removeCart(${i})">Remove</button></p>`).join(''):"<p>Cart empty</p>"; document.getElementById('cartTotal').innerText="Total: GH₵ "+total.toLocaleString(); document.getElementById('cartModal').classList.add('show'); } function closeCart(){ document.getElementById('cartModal').classList.remove('show'); } function removeCart(i){ cart.splice(i,1); saveAll(); updateUI(); openCart(); }
+async function checkout(){ if(!requireLogin()) return; if(!cart.length) return alert("Cart empty"); let phone=document.getElementById('checkoutPhone').value, pay=document.getElementById('checkoutPay').value, total=cart.reduce((a,b)=>a+b.price,0); if(!phone) return alert("Enter delivery phone"); let doOrder=async(method,ref="")=>{ let o=addOrder(cart.map(c=>c.name).join(', '),total,method+" "+ref,"Processing",true); await sendNotifications(o,`Shop order ${o.trackingId} received. Total GH₵${total}. Delivery to ${phone}`); cart=[]; saveAll(); updateUI(); closeCart(); alert(`✅ Order ${o.trackingId} placed!`); showPage('track'); document.getElementById('trackId').value=o.trackingId; trackOrder(); }; if(pay==="wallet"){ if(getWallet()<total) return alert("Insufficient wallet"); setWallet(getWallet()-total); await doOrder("Wallet"); } else payWithPaystack(total,currentUser.email,async(res)=>await doOrder("Paystack",res.reference),"Shop Order"); }
+function quickData(net,gb,price){ renderData(net); showPage('data'); alert(`Selected ${net} ${gb} - GH₵${price}`); }
+async function buyData(){ if(!requireLogin()) return; let net=document.getElementById('dataNetwork').value, bundle=document.getElementById('dataBundle').value, phone=document.getElementById('dataPhone').value, pay=document.getElementById('dataPay').value; if(phone.length<10) return alert("Enter valid number"); let [gb,price]=bundle.split('|'); price=parseFloat(price); let doOrder=async(method,ref="")=>{ let o=addOrder(`${net} Data ${gb} to ${phone}`,price,method+" "+ref,"Processing",false); document.getElementById('dataMsg').innerText=`⏳ Order ${o.trackingId} Processing - Sending ${net} ${gb} to ${phone}...`; document.getElementById('dataTracking').classList.remove('hidden'); document.getElementById('dataTracker').innerHTML=getTrackingSteps("Processing"); await sendNotifications(o,`Data order ${o.trackingId}: ${net} ${gb} to ${phone} processing.`); let v=await vendorDeliver(o,net,phone,gb,"data"); if(v.success){ o.status="Delivered"; o.vendorRef=v.vendorRef; saveAll(); document.getElementById('dataMsg').innerText=`✅ ${net} ${gb} Delivered to ${phone}! Tracking ${o.trackingId}`; document.getElementById('dataTracker').innerHTML=getTrackingSteps("Delivered"); await sendNotifications(o,`✅ DELIVERED! ${net} ${gb} to ${phone}. Tracking ${o.trackingId} - Pleasant Fast Delivery 0538560561`); } else { o.status="Failed"; saveAll(); document.getElementById('dataMsg').innerText=`❌ Vendor failed. Admin will fulfil. Tracking ${o.trackingId}`; } renderOrders(); }; if(pay==="wallet"){ if(getWallet()<price) return alert("Insufficient wallet"); setWallet(getWallet()-price); await doOrder("Wallet"); } else payWithPaystack(price,currentUser.email,async(res)=>await doOrder("Paystack",res.reference),"Data"); }
+function setAir(v){ document.getElementById('airAmount').value=v; }
+async function buyAirtime(){ if(!requireLogin()) return; let net=document.getElementById('airNetwork').value, phone=document.getElementById('airPhone').value, amt=parseFloat(document.getElementById('airAmount').value), pay=document.getElementById('airPay').value; if(phone.length<10||!amt) return alert("Enter number & amount"); let doOrder=async(m,r="")=>{ let o=addOrder(`${net} Airtime GH₵${amt} to ${phone}`,amt,m+" "+r,"Processing",false); let v=await vendorDeliver(o,net,phone,amt,"airtime"); if(v.success){ o.status="Delivered"; o.vendorRef=v.vendorRef; saveAll(); document.getElementById('airMsg').innerText=`✅ GH₵${amt} Airtime Delivered to ${phone} | ${o.trackingId}`; await sendNotifications(o,`✅ DELIVERED! GH₵${amt} Airtime to ${phone}`); } else { o.status="Failed"; saveAll(); document.getElementById('airMsg').innerText="Vendor failed"; } }; if(pay==="wallet"){ if(getWallet()<amt) return alert("Insufficient wallet"); setWallet(getWallet()-amt); await doOrder("Wallet"); } else payWithPaystack(amt,currentUser.email,async(res)=>await doOrder("Paystack",res.reference),"Airtime"); }
+function orderResearch(t,p){ showPage('research'); document.getElementById('resTopic').value=t; }
+async function submitResearch(){ if(!requireLogin()) return; let t=document.getElementById('resTopic').value, ty=document.getElementById('resType').value, d=document.getElementById('resDesc').value, ph=document.getElementById('resPhone').value, pay=document.getElementById('resPay').value; if(!t||!ph) return alert("Fill topic & WhatsApp"); let price=50; let doOrder=async(m,r="")=>{ let o=addOrder(`Research: ${ty} - ${t}`,price,m+" "+r,"Processing",true); await sendNotifications(o,`Research ${o.trackingId} received: ${ty} - ${t}`); let msg=`Hello Pleasant Fast Delivery, Research: ${t}, Type: ${ty}, Details: ${d}, My Number: ${ph}, Tracking: ${o.trackingId}`; window.open(`https://wa.me/233538560561?text=${encodeURIComponent(msg)}`,'_blank'); document.getElementById('resMsg').innerText="✅ Request sent! Tracking "+o.trackingId; }; if(pay==="wallet"){ if(getWallet()<price) return alert("Need GH₵50 or Paystack"); setWallet(getWallet()-price); await doOrder("Wallet"); } else payWithPaystack(price,currentUser.email,async(res)=>await doOrder("Paystack",res.reference),"Research"); }
+function addOrder(item,price,payment="Wallet",status="Delivered",isShop=false){
+ let trackingId="AP-"+Math.floor(100000+Math.random()*900000);
+ let agentId = referralAgentId && agents.find(a=>a.id===referralAgentId) ? referralAgentId : null;
+ let o={id:Date.now(),trackingId,customer:currentUser?currentUser.name+" ("+currentUser.email+")":"Guest",item,price,payment,status,date:new Date().toLocaleString(),vendorRef:"",agentId:agentId,commission:0};
+ if(agentId){ o.commission = creditAgent(o, price, isShop); }
+ orders.unshift(o); saveAll(); renderOrders(); return o;
+}
+function renderOrders(){ let list=orders.filter(o=>!currentUser||o.customer.includes(currentUser.email)||currentUser.role==='admin'); document.getElementById('orderBody').innerHTML=list.length?list.map(o=>`<tr><td><b>${o.trackingId}</b></td><td>${o.item}</td><td>GH₵${o.price}</td><td>${o.payment}</td><td><span class="badge">${o.status}</span></td><td>${o.date}</td><td><button onclick="goTrack('${o.trackingId}')">Track</button></td></tr>`).join(''):"<tr><td colspan=7>No orders</td></tr>"; }
+function goTrack(id){ showPage('track'); document.getElementById('trackId').value=id; trackOrder(); }
+let adminFilter='all'; function adminTab(f,btn){ adminFilter=f; document.querySelectorAll('#page-admin .tabs button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); if(f==='agents'){ document.getElementById('adminOrdersWrap').classList.add('hidden'); document.getElementById('adminAgentsWrap').classList.remove('hidden'); } else { document.getElementById('adminOrdersWrap').classList.remove('hidden'); document.getElementById('adminAgentsWrap').classList.add('hidden'); } renderAdmin(); }
+function renderAdmin(){ if(!(currentUser&&currentUser.role==='admin')) return; let rev=orders.reduce((a,o)=>a+o.price,0); let totalComm=orders.reduce((a,o)=>a+(o.commission||0),0); document.getElementById('statRevenue').innerText="GH₵"+rev.toLocaleString(); document.getElementById('statOrders').innerText=orders.length; document.getElementById('statUsers').innerText=users.length; document.getElementById('statAgents').innerText=agents.length; document.getElementById('statAgentPayout').innerText="GH₵"+totalComm.toFixed(2); document.getElementById('statSMS').innerText=notifications.filter(n=>n.channel==='SMS').length; let list=orders.filter(o=>adminFilter==='all'||o.status===adminFilter); if(adminFilter!=='agents'){ document.getElementById('adminOrderBody').innerHTML=list.map(o=>`<tr><td><b>${o.trackingId}</b></td><td>${o.customer}</td><td>${o.item}</td><td>GH₵${o.price}</td><td>${o.agentId? o.agentId+" / GH₵"+(o.commission||0).toFixed(2) : "Direct"}</td><td><span class="badge">${o.status}</span></td><td><button onclick="changeStatus('${o.trackingId}','Delivered')">Deliver</button></td></tr>`).join('')||"<tr><td colspan=7>No orders</td></tr>"; } document.getElementById('adminAgentBody').innerHTML=agents.map(a=>`<tr><td><b>${a.id}</b></td><td>${a.name}</td><td>${a.phone}</td><td>${a.type}</td><td>GH₵${a.earnings.toFixed(2)}</td><td>${a.referrals}</td><td><button onclick="copyText('${getAgentLink(a.id)}')">Copy Link</button></td><td><button onclick="approveAgent('${a.id}')">Approve</button></td></tr>`).join(''); document.getElementById('adminUserBody').innerHTML=users.map(u=>`<tr><td>${u.name}</td><td>${u.email}</td><td>${u.phone}</td><td>GH₵${u.wallet}</td><td>${u.role}</td></tr>`).join(''); renderNotifHistory(); }
+function copyText(t){ navigator.clipboard.writeText(t).then(()=>alert("Copied: "+t)); }
+function approveAgent(id){ alert("Agent "+id+" approved ✅"); }
+async function changeStatus(trackingId,status){ let o=orders.find(x=>x.trackingId===trackingId); if(!o) return; o.status=status; saveAll(); renderAdmin(); renderOrders(); let phone=users.find(u=>o.customer.includes(u.email))?.phone||"0538560561"; await sendSMS(phone,`Update: Order ${trackingId} is now ${status}. Pleasant Fast Delivery - 0538560561`); logNotif(trackingId,"SMS",phone,`Status ${status}`,"Sent"); alert(`Order ${trackingId} -> ${status} + SMS sent`); }
+async function resendNotif(trackingId){ let o=orders.find(x=>x.trackingId===trackingId); if(!o) return; await sendNotifications(o,`Reminder: Order ${trackingId} - ${o.item} - Status: ${o.status}`); alert("Notification resent"); }
+function manualUpdate(){ let id=document.getElementById('manualOrderId').value.trim().toUpperCase(), ref=document.getElementById('manualVendorRef').value, st=document.getElementById('manualStatus').value; let o=orders.find(x=>x.trackingId===id); if(!o) return alert("Order not found"); o.vendorRef=ref; o.status=st; saveAll(); renderAdmin(); renderOrders(); changeStatus(id,st); }
+function saveAdminSettings(){ CONFIG.paystackKey=document.getElementById('paystackKey').value; CONFIG.vendorProvider=document.getElementById('vendorProvider').value; CONFIG.vendorKey=document.getElementById('vendorKey').value; CONFIG.vendorSecret=document.getElementById('vendorSecret').value; CONFIG.arkeselSmsKey=document.getElementById('arkeselSmsKey').value; CONFIG.arkeselSender=document.getElementById('arkeselSender').value; CONFIG.waToken=document.getElementById('waToken').value; CONFIG.waPhoneId=document.getElementById('waPhoneId').value; CONFIG.adminWhats=document.getElementById('adminWhats').value; CONFIG.commData=parseFloat(document.getElementById('agentCommData').value)||5; CONFIG.commShop=parseFloat(document.getElementById('agentCommShop').value)||10; CONFIG.autoSMS=document.getElementById('autoSMS').value; CONFIG.autoWA=document.getElementById('autoWA').value; localStorage.setItem('ap_paystack_key',CONFIG.paystackKey); localStorage.setItem('ap_vendor_provider',CONFIG.vendorProvider); localStorage.setItem('ap_vendor_key',CONFIG.vendorKey); localStorage.setItem('ap_vendor_secret',CONFIG.vendorSecret); localStorage.setItem('ap_arkesel_sms',CONFIG.arkeselSmsKey); localStorage.setItem('ap_arkesel_sender',CONFIG.arkeselSender); localStorage.setItem('ap_wa_token',CONFIG.waToken); localStorage.setItem('ap_wa_phone',CONFIG.waPhoneId); localStorage.setItem('ap_admin_whats',CONFIG.adminWhats); localStorage.setItem('ap_comm_data',CONFIG.commData); localStorage.setItem('ap_comm_shop',CONFIG.commShop); localStorage.setItem('ap_auto_sms',CONFIG.autoSMS); localStorage.setItem('ap_auto_wa',CONFIG.autoWA); document.getElementById('adminMsg').innerText="✅ Saved!"; updateUI(); }
+function clearAllData(){ if(confirm("Clear everything?")){ localStorage.clear(); location.reload(); } }
+function openAddProduct(){ if(!(currentUser&&currentUser.role==='admin')) return alert("Admin only"); document.getElementById('productModal').classList.add('show'); } function closeProductModal(){ document.getElementById('productModal').classList.remove('show'); }
+function saveProduct(){ let name=document.getElementById('pName').value, price=parseFloat(document.getElementById('pPrice').value), cat=document.getElementById('pCat').value, img=document.getElementById('pImg').value||"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"; if(!name||!price) return alert("Fill name & price"); products.push({id:Date.now(),name,price,cat,img}); saveProducts(); renderShop(); closeProductModal(); alert("Product added"); }
+function deleteProduct(id){ if(!confirm("Delete?")) return; products=products.filter(p=>p.id!==id); saveProducts(); renderShop(); }
+function searchAll(){ let q=document.getElementById('searchInput').value.trim(); if(q.toUpperCase().startsWith("AP-")){ showPage('track'); document.getElementById('trackId').value=q.toUpperCase(); trackOrder(); return; } q=q.toLowerCase(); if(q.includes('data')) showPage('data'); else if(q.includes('airtime')) showPage('airtime'); else if(q.includes('research')) showPage('research'); else if(q.includes('agent')) showPage('agent'); else if(q.includes('track')) showPage('track'); else if(q) showPage('shop'); }
+// Auto show agent page if ?ref=JOIN or #agent
+if(window.location.search.includes('ref=') || window.location.hash==='#agent'){ setTimeout(()=>{ if(window.location.search.includes('JOIN')||window.location.hash==='#agent') showPage('agent'); },500); }
+renderData(); renderShop(); updateUI(); renderOrders(); renderNotifHistory();
+</script>
+</body>
+</html>
